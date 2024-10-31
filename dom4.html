@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form </title>
+    <style>
+        .form-class{
+            margin: auto;
+            width: 50%;
+            border: 1px solid rgb(160, 160, 160);
+            padding: 20px;
+            border-radius: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+   
+    <form action="" class="form-class">
+        <label for="name">Name: </label>
+        <input type="text" placeholder="(minimum three characters)" class="name"><br><br>
+    
+        <label for="email">Email: </label>
+        <input type="email" placeholder="(Enter Your Email)"><br><br>
+    
+        <label for="password">password</label>
+        <input type="password" placeholder="(Minimum 8 characters)" class="pass"><br><br>
+    
+        <button class="submit-btn">submit</button>
+    </form>
+    
+    <script>
+        const inputName = document.querySelector('.name');
+        const password = document.querySelector('.pass');
+
+        document.querySelector('.submit-btn')
+         .addEventListener('click', () => {
+            console.log(inputName.value.length)
+            if(inputName.value.length >= 3 && password.value.length >= 8){
+                alert('Form Validation successful');
+            }
+            else{
+                alert('Form Validation Failed');
+            }
+         });
+    </script>
+</body>
+</html>

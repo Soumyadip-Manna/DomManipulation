@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter feature</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    
+    <p>Counter</p>
+
+    <div>
+        <button class="js-inc-btn">+</button>
+        <span class="js-counter">0</span>
+        <button class="js-dec-btn">-</button>
+    </div>
+
+
+    <script>
+        let counterValue = 0;
+
+        const incrementButton = document.querySelector('.js-inc-btn');
+        const decrementButton = document.querySelector('.js-dec-btn');
+        
+        incrementButton.addEventListener('click', () => {
+            counterValue += 1;
+            document.querySelector('.js-counter').innerHTML = counterValue;
+        });
+
+        decrementButton.addEventListener('click', () => {
+            if(counterValue > 0 ){
+                counterValue -= 1;
+                document.querySelector('.js-counter').innerHTML = counterValue;
+            }
+            else{
+                alert('Counter is Going beyond Zero')
+            }
+        });
+
+    </script>
+</body>
+</html>

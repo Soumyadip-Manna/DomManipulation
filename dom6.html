@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dropdown</title>
+</head>
+<body>
+    
+    <script>
+        const lanArr = ['Javascript','Java','Python','C++'];
+
+        let para = document.createElement('p');
+        para.innerText = `Which is faviourite Programming Language :`;
+
+        let select = document.createElement('select');
+        let span = document.createElement('span');
+
+        for (const lang of lanArr) {
+
+            let option = document.createElement('option');
+            option.innerText = lang;
+            option.value = lang;
+            select.appendChild(option);
+            
+        }
+        span.appendChild(select);
+        para.appendChild(span);
+        document.body.appendChild(para)
+        
+    </script>
+</body>
+</html>

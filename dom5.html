@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle image</title>
+</head>
+<body>
+    <div>
+        <p class="js-para"></p>
+        <button class="js-toggle-button">Toggle image</button>
+    </div><br>
+    <img src="./css-flexbox-poster.png" alt="" class="js-image" style="width: 20%;">
+
+
+    <script>
+        let quote = 'visible';
+
+        function logQuoteMessage(){
+            document.querySelector('.js-para')
+             .innerHTML = `Your image is ${quote}`;
+        }
+        logQuoteMessage();
+
+        let image = document.querySelector('.js-image');
+        document.querySelector('.js-toggle-button')
+         .addEventListener('click', () => {
+            if(quote === 'visible'){
+                image.style.display = 'none';
+                quote = 'hidden';
+                logQuoteMessage();
+            }
+            else{
+                image.style.display = 'initial';
+                quote = 'visible';
+                logQuoteMessage();
+            }
+         });
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log-in and Log-out</title>
+</head>
+<body>
+    <button class="js-login-btn">Login</button>
+    <button class="js-logout-btn">Logout</button>
+    <p class="js-para"></p>
+
+    <script>
+        let para = document.querySelector('.js-para');
+
+        let loginBtn = document.querySelector('.js-login-btn');
+        loginBtn.addEventListener('click', () => {
+            localStorage.setItem('authUser', true);
+            window.location.reload();
+        });
+
+        let logoutBtn = document.querySelector('.js-logout-btn');
+        logoutBtn.addEventListener('click', () => {
+            localStorage.setItem('authUser', false);
+            window.location.reload();
+        });
+
+        const getLocalStoragevalue = localStorage.getItem('authUser');
+
+        if(getLocalStoragevalue == 'false'){
+            para.innerText = `User has not Logged in`;
+        }
+        else{
+            para.innerText = `User is Logged in`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toogle feature</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <h2 class="js-title"></h2>
+    <button class="js-toggle-btn">Toggle Theme</button>
+
+
+    <script>
+        let colorOption = 'light';
+        function textOption(){
+            document.querySelector('.js-title').innerHTML = `This is ${colorOption} mode`;
+        }
+        textOption();
+        const toggleBtn = document.querySelector('.js-toggle-btn');
+        toggleBtn.addEventListener('click' , () => {
+            if(colorOption !== 'black'){
+                document.body.style.backgroundColor = 'black';
+                document.body.style.color = 'white';
+                colorOption = 'black';
+                textOption();
+            }
+            else{
+                document.body.style.backgroundColor = 'white';
+                document.body.style.color = 'black';
+                colorOption = 'light';
+                textOption();
+            }
+        })
+    </script>
+</body>
+</html>

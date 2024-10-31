@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter Records</title>
+</head>
+<body>
+    <input type="text" placeholder="Search for items" class="js-search-input">
+    <p>Results :</p>
+    <ul class="js-ul-list">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>tailwind css</li>
+        <li>Git Hub</li>
+        <li>Javascript</li>
+    </ul>
+    <script>
+        let jsInput = document.querySelector('.js-search-input');
+        let list = document.querySelectorAll('.js-ul-list li');
+        
+        jsInput.addEventListener('keyup', () => {
+            const filterVal = jsInput.value.toLowerCase();
+            for(let i = 0; i < list.length; i++){
+                const listText = list[i].innerText.toLowerCase();
+
+                if(listText.includes(filterVal)){
+                    list[i].style.display = 'block';
+                }
+                else{
+                    list[i].style.display = 'none';
+                }
+            }
+        });
+    </script>
+</body>
+</html>

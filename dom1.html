@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Profile Picture</title>
+    <style>
+        .css-image{
+            width: 40%;
+            height: 40%;
+        }
+    </style>
+</head>
+<body>
+    <h4>Update Profile Picture</h4>
+    <input type="file" class="js-input">
+    <h4>Your Profile picture </h4>
+    <img src="" alt="No Profile Picture" class="css-image js-image">
+
+
+    <script>
+        const input = document.querySelector('.js-input');
+        const image = document.querySelector('.js-image');
+        input.addEventListener('change' ,(e)=>{
+            // console.log(e.target.files[0])
+            image.src = e.target.files[0].name;
+        });
+    </script>
+</body>
+</html>
